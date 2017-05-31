@@ -1,0 +1,8 @@
+{
+    "name": "com.a1re1.finthefish",
+    "version": "1.0.0",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "displayName": "Fin the Fish"
+}

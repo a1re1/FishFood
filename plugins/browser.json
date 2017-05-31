@@ -1,0 +1,28 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.a1re1.finthefish"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "XXXXXXX",
+            "PACKAGE_NAME": "com.a1re1.finthefish"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.a1re1.finthefish"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.a1re1.finthefish"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.a1re1.finthefish"
+        }
+    },
+    "dependent_plugins": {}
+}
