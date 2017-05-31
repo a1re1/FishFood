@@ -19,7 +19,7 @@ function Shark(){
 
 	this.update = function(){
 		this.x -= this.speed;
-		this.pos += velocity;
+		this.pos += velocity/4;
 	}
 	
 	this.hit = false;

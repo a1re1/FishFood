@@ -11,7 +11,7 @@ function Player(){
 	this.show = function(){
 		img.size(this.d1, this.d2);
 		img.position(this.x - this.d1/2, this.y - this.d2/2*.9);
-		ellipse(this.x, this.y, this.d1, this.d2);
+		//ellipse(this.x, this.y, this.d1, this.d2);
 	}
 	
 	this.update = function(){
@@ -36,6 +36,6 @@ function Player(){
 	}
 	
 	this.up = function(){
-		if(velocity < 8){velocity = velocity*1.05;}
+		if(velocity < 6){velocity = velocity*1.02;}
 	}
 }

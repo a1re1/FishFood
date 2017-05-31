@@ -18,7 +18,8 @@ function setup() {
 	button.mousePressed(reset);
 }
 
-function touchStarted(){}
+function touchStarted(){
+}
 
 function draw() {
 	if(lives > 0){
@@ -40,7 +41,7 @@ function draw() {
 		}
 		if(touches.length > 0){
 			for(var i = touches.length-1; i>=0; i--){
-				if(touches[i].x <= window.innerWidth/2){
+				if(touches[i].x <= 190){
 					player.x += 3;
 					player.y -= velocity + 3;
 				}
@@ -80,7 +81,8 @@ function draw() {
 			}
 		}
 		
-		if(frameCount % Math.floor(60/(velocity/3)) == 0){
+		if(frameCount % Math.floor(120/velocity) == 0){
+			player.up();
 			seaweed.push(new Seaweed());
 			sharks.push(new Shark());
 		}
@@ -116,11 +118,11 @@ window.onresize = function() {
 function keyPressed(){
 	//console.log(keyCode);
 	if (keyCode == '65' || keyCode == LEFT_ARROW) {
-		player.up();
+		//player.up();
 		//console.log(player.velocity);
 	}
 	if (keyCode == '68' || keyCode == RIGHT_ARROW) {
-		player.up();
+		//player.up();
 		//console.log(player.velocity);
 	}
 }
