@@ -16,14 +16,14 @@ function Player(){
 	
 	this.update = function(){
 		//this.velocity += this.gravity;
-		//this.y += this.velocity;
+		this.y += velocity + 1;
 		
-		if(this.y < height/2 - 50 - this.d1/2){
-			this.y = height/2 - 50 - this.d1/2;
+		if(this.y < this.d1/2){
+			this.y = this.d1/2;
 		}
 		
-		if(this.y > height/2 + 50 + this.d1/2){
-			this.y = height/2 + 50 + this.d1/2;
+		if(this.y > height - this.d1/2){
+			this.y = height - this.d1/2;
 		}
 
 		if(this.x > width - this.d2/2){
@@ -36,6 +36,6 @@ function Player(){
 	}
 	
 	this.up = function(){
-		velocity += .05;
+		if(velocity < 8){velocity = velocity*1.01;}
 	}
 }
