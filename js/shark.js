@@ -19,7 +19,7 @@ function Shark(){
 
 	this.update = function(){
 		this.x -= this.speed;
-		this.pos += velocity;
+		this.pos += velocity/4;
 	}
 	
 	this.hit = false;
@@ -36,7 +36,7 @@ function Shark(){
 		return false;
 	}
 	this.show = function(){
-		fill(50,150,73);
+		fill(50,0,243);
 		if(this.hit){
 			fill(255, 0, 0);
 		}
@@ -45,6 +45,12 @@ function Shark(){
 	
 
 	this.offscreen = function(){
-		return this.x < -this.d1/2;
+		if(this.side == 1){
+			return this.x < -this.d1/2;
+		}
+		else{
+			return this.x > width + this.d1/2;
+		}
+		
 	}
 }

@@ -10,8 +10,8 @@ function Player(){
 	
 	this.show = function(){
 		img.size(this.d1, this.d2);
-		img.position(this.x - this.d1/2, this.y + this.d2/2*.9);
-		//ellipse(this.x, this.y, this.d1, this.d2);
+		img.position(this.x - this.d1/2, this.y - this.d2/2*.9);
+		ellipse(this.x, this.y, this.d1, this.d2);
 	}
 	
 	this.update = function(){
@@ -22,8 +22,8 @@ function Player(){
 			this.y = this.d1/2;
 		}
 		
-		if(this.y > height - this.d1/2){
-			this.y = height - this.d1/2;
+		if(this.y > height - 2*this.d1){
+			this.y = height - 2*this.d1;
 		}
 
 		if(this.x > width - this.d2/2){
@@ -36,6 +36,6 @@ function Player(){
 	}
 	
 	this.up = function(){
-		if(velocity < 8){velocity = velocity*1.01;}
+		if(velocity < 8){velocity = velocity*1.05;}
 	}
 }
