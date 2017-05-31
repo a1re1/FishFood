@@ -1,10 +1,11 @@
+var velocity = 1;
+
 function Player(){
 	this.x = width/2;
-	this.y = height-10;
+	this.y = height/2;
 	this.d1 = 64;
 	this.d2 = 64;
 	this.gravity = 1;
-	this.velocity = 0;
 	img = createImg("resources/crimson.png");
 	
 	this.show = function(){
@@ -15,17 +16,16 @@ function Player(){
 	
 	this.update = function(){
 		//this.velocity += this.gravity;
-		this.y += this.velocity;
+		//this.y += this.velocity;
 		
-		if(this.y > height - this.d1/2){
-			this.y = height - this.d1/2;
-			this.velocity = 0;
+		if(this.y < height/2 - 50 - this.d1/2){
+			this.y = height/2 - 50 - this.d1/2;
 		}
 		
-		if(this.y < this.d1/2){
-			this.y = this.d1/2;
-			this.velocity = 0;
+		if(this.y > height/2 + 50 + this.d1/2){
+			this.y = height/2 + 50 + this.d1/2;
 		}
+
 		if(this.x > width - this.d2/2){
 			this.x = width - this.d2/2;
 		}
@@ -36,6 +36,6 @@ function Player(){
 	}
 	
 	this.up = function(){
-		this.velocity -= .05;
+		velocity += .05;
 	}
 }
