@@ -1,3 +1,9 @@
+/**
+* @filename: player.js
+* @desc: a player module for Fin the Fish.
+* @author: Tyler Whitehurst (a1re1) twwhitehurst@gmail.com
+*/
+
 var player;
 var w = window.innerWidth;
 var h = window.innerHeight;
@@ -88,6 +94,11 @@ function draw() {
 		}
 	}
 	else{
+		for(var i = seaweed.length-1; i >= 0; i--){
+			seaweed[i].l.remove();
+			seaweed[i].r.remove();
+			seaweed.splice(i,1);
+		}
 		background(200,10,0);
 		fill(255);
 		textSize(32);
@@ -100,7 +111,11 @@ function reset(){
 	lives = 3;
 	score = 0;
 	velocity = 1;
-	seaweed = [];
+	for(var i = seaweed.length-1; i >= 0; i--){
+		seaweed[i].l.remove();
+		seaweed[i].r.remove();
+		seaweed.splice(i,1);
+	}
 	sharks = [];
 	player.x = width/2;
 	player.y = height/2;
