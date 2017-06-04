@@ -2,10 +2,10 @@
 <widget id="com.a1re1.finthefish" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Fin the Fish</name>
     <description>
-        Push sample application that receives push notifications.
+        The sea is a dangerous place.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="twwhitehurst@gmail.com" name="Tyler Whitehurst">
+        a1re1 Productions
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />

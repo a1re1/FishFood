@@ -1,19 +1,30 @@
+/**
+* @filename: player.js
+* @desc: a player module for Fin the Fish.
+* @author: Tyler Whitehurst (a1re1) twwhitehurst@gmail.com
+*/
+
 function Shark(){
 	this.pos = height/2 + 100 - random(height/2 + 300);
 	this.side = 1 - Math.floor(random(2));
 	this.top = this.pos - this.d2/2;
 	this.bottom = this.pos + this.d2/2;
 	this.x;
+	this.d1 = 60;
+	this.d2 = 30;
+	this.shark = createImg("resources/shark.gif");
+	this.shark.size(this.d1, this.d2);
 	if(this.side == 1){
 		this.x = width;
 		this.speed = 3;
+		this.shark.size(this.d1, this.d2);
 	}
 	else{
 		this.x = 0;
 		this.speed = -3;
+		this.shark.size(-this.d1, this.d2);
 	}
-	this.d1 = 40;
-	this.d2 = 20;
+
 	this.left = this.x - this.d1/2;
 	this.right = this.x + this.d1/2;
 
@@ -36,20 +47,23 @@ function Shark(){
 		return false;
 	}
 	this.show = function(){
+		this.shark.position(this.x-this.d1/2, this.pos-this.d2/2);
 		fill(50,0,243);
 		if(this.hit){
 			fill(255, 0, 0);
 		}
-		ellipse(this.x, this.pos , this.d1, this.d2);
+		//ellipse(this.x, this.pos , this.d1, this.d2);
 	}
 	
 
 	this.offscreen = function(){
-		if(this.side == 1){
-			return this.x < -this.d1/2;
+		if(this.side == 1 && this.x < -this.d1/2){
+			this.shark.remove();
+			return true;
 		}
-		else{
-			return this.x > width + this.d1/2;
+		else if(this.side == 0 && this.x > width + this.d1/2){
+			this.shark.remove();
+			return true;
 		}
 		
 	}

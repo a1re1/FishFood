@@ -9,7 +9,7 @@
 */
 function Seaweed(){
 	this.left = random(width/2);//rendomly generated left kelp length
-	this.right = random(width/2);//randomly genrated right kelp length
+	this.right = width - this.left - random(width/2) - 20;//randomly genrated right kelp length
 	this.y = 0;//kelp y-position
 	this.w = 20;//width of a kelp
 	this.l = createImg("resources/Kelp.gif");//left kelp

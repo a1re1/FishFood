@@ -31,10 +31,10 @@ function draw() {
 	if(lives > 0){
 		background(20,110,212);
 		fill(255);
-		textSize(32);
+		textSize(width/12);
 		text("Score: " + score, 20, height - 20);
 		fill(255);
-		textSize(32);
+		textSize(width/12);
 		text("Lives: " + lives, width - 130, height - 20);
 		player.update();
 		if ( keyIsDown(LEFT_ARROW) || keyIsDown(65)){
@@ -87,9 +87,17 @@ function draw() {
 			}
 		}
 		
-		if(frameCount % Math.floor(120/velocity) == 0){
+		if(frameCount % 110 == 0 && velocity<3){
 			player.up();
 			seaweed.push(new Seaweed());
+			sharks.push(new Shark());
+		}
+		else if(frameCount % 50 == 0 && velocity>=3){
+			player.up();
+			seaweed.push(new Seaweed());
+			sharks.push(new Shark());
+		}
+		if(frameCount % 110 == 0 && velocity>2){
 			sharks.push(new Shark());
 		}
 	}
@@ -98,6 +106,10 @@ function draw() {
 			seaweed[i].l.remove();
 			seaweed[i].r.remove();
 			seaweed.splice(i,1);
+		}
+		for(var i = sharks.length-1; i >= 0; i--){
+			sharks[i].shark.remove();
+			sharks.splice(i,1);
 		}
 		background(200,10,0);
 		fill(255);
@@ -116,7 +128,10 @@ function reset(){
 		seaweed[i].r.remove();
 		seaweed.splice(i,1);
 	}
-	sharks = [];
+	for(var i = sharks.length-1; i >= 0; i--){
+		sharks[i].shark.remove();
+		sharks.splice(i,1);
+	}
 	player.x = width/2;
 	player.y = height/2;
 
